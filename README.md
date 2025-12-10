@@ -408,14 +408,14 @@ The Filter calls only the `loginFail()` and `loginSuccess()` methods. The 
 
  **If authentication fails, then _Failure_.**
 
-1. The  SecurityContextHolder is cleared out (`SecurityContextHolderStrategy`).
+1. The  `SecurityContextHolderStrategy` is cleared out.
 2. `RememberMeServices.loginFail` is invoked. If remember me is not configured, this is a no-op. See the `RememberMeServices`  interface in the Javadoc.
 3. `AuthenticationEntryPoint` is invoked to trigger the WWW-Authenticate to be sent again. See the `AuthenticationEntryPoint` interface in the Javadoc.
 
 
  **If authentication is successful, then _Success_.**
 
-1. The Authentication is set on the SecurityContextHolder (`SecurityContextHolderStrategy`).
+1. The Authentication is set on the `SecurityContextHolderStrategy`.
 2. `RememberMeServices.loginSuccess` is invoked. If remember me is not configured, this is a no-op. See the `RememberMeServices` interface in the Javadoc.
 3. The `BasicAuthenticationFilter` invokes `FilterChain.doFilter(request,response)` to continue with the rest of the application logic. See the `BasicAuthenticationFilter` Class in the Javadoc
 

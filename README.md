@@ -350,7 +350,7 @@ If credentials(`UsernamePasswordAuthenticationToken` not null) exist, the filter
 Authentication authResult = this.authenticationManager.authenticate(authRequest);
 ```
 Typically, the `AuthenticationManager` is a `ProviderManager`,  
-which iterates through a list of `AuthenticationProviders` and check which one suitable most commonly, the `DaoAuthenticationProvider`.
+which iterates through a list of `AuthenticationProviders` and check which one suitable most commonly `DaoAuthenticationProvider`.
 That provider finds the user with a user details service and validates the password using a password encoder.
 
 
